@@ -1,12 +1,12 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.html"],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './src/**/*.{html,js,jsx,ts,tsx,vue}',
+  ], // add your preferred file extensions here
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+  ],
 };

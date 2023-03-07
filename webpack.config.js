@@ -33,7 +33,7 @@ module.exports = ({ portal, autoupload }) => ({
       portal,
       autoupload,
       src: "dist",
-      dest: "hubspot-tailwind",
+      dest: "hubspot-sayyeah-theme",
     }),
 
     new MiniCssExtractPlugin({
