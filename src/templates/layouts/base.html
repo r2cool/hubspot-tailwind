@@ -5,6 +5,9 @@
 <html lang="{{ html_lang }}" {{ html_lang_dir }}>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
@@ -16,7 +19,7 @@
     {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {{ standard_header_includes }}
   </head>
-  <body>
+  <body class="scrollbar-thin scrollbar-track-gray-400 scrollbar-thumb-orange-500">
     <div class="text-base antialiased text-gray-700 bg-white font-body {{ builtin_body_classes }}">
       {% block header %}
         {% global_partial path='../partials/header.html' %}
@@ -30,7 +33,40 @@
       {% endblock footer %}
     </div>
     {{ require_js(get_asset_url('../../js/main.js')) }}
+    <script src="https://kit.fontawesome.com/9e8b60c458.js" crossorigin="anonymous"></script>
     {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {{ standard_footer_includes }}
+    <div class="menu-container">
+      <div class="menu-sliders"></div>
+      <div class="menu-sliders"></div>
+      <div class="menu-sliders"></div>
+      <div class="menu p-4">
+        <div class="container relative mx-auto">
+          <div class="plus-btn-pos">
+            <div class="plus-btn">
+              <div class="r1"></div>
+              <div class="r2"></div>
+            </div>
+          </div>
+          <ul class="flex items-center justify-center h-full flex-col">
+            <li>
+              <a>Home</a>
+            </li>
+            <li>
+              <a>Over ons</a>
+            </li>
+            <li>
+              <a>Videos</a>
+            </li>
+            <li>
+              <a>Cases</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
